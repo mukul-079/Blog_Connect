@@ -12,7 +12,7 @@
                 <!-- Carousel Inner -->
                 <div class="carousel-inner">
                     {% for post in posts|slice:":5" %}
-                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}" style="height: 400px;">
                         <div class="d-flex align-items-center justify-content-center" style="height: 400px;">
                             <div class="row">
                                 <!-- Text Content Block -->
@@ -47,18 +47,18 @@
                 </a>
             </div>
 
-            <h1>Posts: </h1><br>
-
-            <!-- List of Posts -->
-            <div class="post-list">
+            <!-- Posts List -->
+            <h1 class="display-4 font-weight-bold text-info">Posts:</h1><br>
+            <div class="row">
                 {% for post in posts %}
-                <div class="jumbotron jumbotron-fluid jumbo-light mb-4">
-                    <div class="container">
-                        <h4 class="display-4 font-weight-bold">{{ post.title }}</h4>
-                        <p class="lead">{{ post.desc }}</p>
+                <div class="col-md-12 mb-4">
+                    <div class="card bg-white">
+                        <div class="card-body">
+                            <h4 class="display-4 font-weight-bold text-dark">{{ post.title }}</h4>
+                            <p class="text-dark">{{ post.desc }}</p>
+                        </div>
                     </div>
                 </div>
-                <br>
                 {% endfor %}
             </div>
         </div>
